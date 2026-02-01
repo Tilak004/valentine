@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Valentine ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #2c2c2c;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      max-width: 600px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      margin: 20px;
+      animation: fadeUp 1s ease forwards;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4b5c;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .hidden {
+      display: none;
+    }
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .movie {
+      background: #fff3f5;
+      padding: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .movie:hover {
+      transform: scale(1.05);
+    }
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      color: #ff4b5c;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<section id="intro">
+  <h1>Hey My Valentine ❤️</h1>
+  <div class="card">
+    <p>From rom-com smiles to thriller goosebumps, this little page is made just for you.</p>
+    <p>Ready to begin our movie-style journey?</p>
+    <button onclick="nextSection('romcom')">Start the Story 🎬</button>
+  </div>
+</section>
+
+<section id="romcom" class="hidden">
+  <h2>Rom-Com Mode 💕</h2>
+  <div class="card">
+    <p>Some stories feel like <b>Jab We Met</b> — unexpected, warm, and unforgettable.</p>
+    <p>Like Geet says: <i>"Main apni favourite hoon"</i> — and you are my favourite too.</p>
+    <button onclick="nextSection('marvel')">Next Genre ➡️</button>
+  </div>
+</section>
+
+<section id="marvel" class="hidden">
+  <h2>Marvel Multiverse 🦸‍♀️</h2>
+  <div class="card">
+    <p>In every universe, timeline, and multiverse…</p>
+    <p><b>You</b> are my constant.</p>
+    <p>If love had an Infinity Stone, you'd be it.</p>
+    <button onclick="nextSection('thriller')">Enter the Mystery 🔍</button>
+  </div>
+</section>
+
+<section id="thriller" class="hidden">
+  <h2>Thriller & Mystery 🕯️</h2>
+  <div class="card">
+    <p>The biggest mystery I solved?</p>
+    <p>How someone so perfect found her way into my life.</p>
+    <button onclick="nextSection('final')">Final Scene 🎥</button>
+  </div>
+</section>
+
+<section id="final" class="hidden">
+  <h2>Final Scene ❤️</h2>
+  <div class="card">
+    <p>No jump scares. No cliffhangers.</p>
+    <p>Just one question…</p>
+    <h3>Will you be my Valentine? 💌</h3>
+    <button onclick="alert('Best answer ever ❤️')">YES 🥰</button>
+  </div>
+</section>
+
+<script>
+  function nextSection(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.innerText = '❤️';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+
+  setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
