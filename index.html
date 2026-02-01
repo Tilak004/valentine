@@ -3,152 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For My Valentine ❤️</title>
+  <title>Keertana — My Favourite Story ❤️</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      color: #2c2c2c;
-      text-align: center;
-      overflow-x: hidden;
-    }
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-    }
-    h1, h2 {
-      margin-bottom: 10px;
-    }
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      max-width: 600px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      margin: 20px;
-      animation: fadeUp 1s ease forwards;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 22px;
-      border: none;
-      border-radius: 30px;
-      background: #ff4b5c;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .hidden {
-      display: none;
-    }
-    .movie-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .movie {
-      background: #fff3f5;
-      padding: 15px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .movie:hover {
-      transform: scale(1.05);
-    }
-    .heart {
-      position: fixed;
-      bottom: -20px;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-      color: #ff4b5c;
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes floatUp {
-      from { transform: translateY(0); opacity: 1; }
-      to { transform: translateY(-110vh); opacity: 0; }
-    }
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: radial-gradient(circle at top, #121212, #050505); color: #f5f5f5; text-align: center; overflow-x: hidden; }
+    section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; }
+    h1, h2 { margin-bottom: 10px; }
+    .subtitle { opacity: 0.75; font-size: 14px; margin-bottom: 18px; }
+    .card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 32px; border-radius: 20px; max-width: 760px; box-shadow: 0 25px 50px rgba(0,0,0,0.45); margin: 20px; animation: fadeUp 1s ease forwards; }
+    button { margin-top: 26px; padding: 14px 28px; border: none; border-radius: 40px; background: linear-gradient(135deg, #ff4b5c, #ff758c); color: white; font-size: 16px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+    button:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+    .hidden { display: none; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .heart { position: fixed; bottom: -20px; font-size: 18px; animation: floatUp 7s linear infinite; color: #ff5c8a; }
+    @keyframes floatUp { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-120vh); opacity: 0; } }
   </style>
 </head>
 <body>
 
 <section id="intro">
-  <h1>Hey My Valentine ❤️</h1>
+  <h1>🎬 Keertana’s Movie Night</h1>
+  <p class="subtitle">A story written in the genres you love</p>
   <div class="card">
-    <p>From rom-com smiles to thriller goosebumps, this little page is made just for you.</p>
-    <p>Ready to begin our movie-style journey?</p>
-    <button onclick="nextSection('romcom')">Start the Story 🎬</button>
+    <p>At first glance, you look calm. Chill. Unbothered.</p>
+    <p>But I know better.</p>
+    <p>Inside, your mind runs a little deeper — thinking, feeling, hoping.</p>
+    <p>So tonight, instead of choosing a movie…</p>
+    <p>I chose to tell <b>your</b> story.</p>
+    <button onclick="next('friends')">Press Play ▶️</button>
+  </div>
+</section>
+
+<section id="friends" class="hidden">
+  <h2>☕ Friends — Comfort Chapter</h2>
+  <div class="card">
+    <p>Some people feel like noise.</p>
+    <p>Some feel like peace.</p>
+    <p>You feel like a familiar couch, a warm coffee, a laugh that stays.</p>
+    <p>No drama. No pressure.</p>
+    <p>Just the quiet comfort of being understood.</p>
+    <p><i>We’ll be there for each other — always.</i></p>
+    <button onclick="next('romcom')">Next Episode ▶️</button>
   </div>
 </section>
 
 <section id="romcom" class="hidden">
-  <h2>Rom-Com Mode 💕</h2>
+  <h2>💕 Rom‑Com — Hopeless Romantic Mode</h2>
   <div class="card">
-    <p>Some stories feel like <b>Jab We Met</b> — unexpected, warm, and unforgettable.</p>
-    <p>Like Geet says: <i>"Main apni favourite hoon"</i> — and you are my favourite too.</p>
-    <button onclick="nextSection('marvel')">Next Genre ➡️</button>
+    <p>You call yourself a <b>hopeless romantic</b>.</p>
+    <p>Someone who believes in small moments, long conversations, and love that feels safe.</p>
+    <p>This chapter feels like <b>Jab We Met</b>.</p>
+    <p>Warm. Honest. A little filmy.</p>
+    <p><i>“Main apni favourite hoon.”</i></p>
+    <p>And somehow, without trying…</p>
+    <p>You became my favourite too.</p>
+    <button onclick="next('taylor')">Play the Song 🎶</button>
   </div>
 </section>
 
-<section id="marvel" class="hidden">
-  <h2>Marvel Multiverse 🦸‍♀️</h2>
+<section id="taylor" class="hidden">
+  <h2>🎶 Taylor Swift — The Soft Heart</h2>
   <div class="card">
-    <p>In every universe, timeline, and multiverse…</p>
-    <p><b>You</b> are my constant.</p>
-    <p>If love had an Infinity Stone, you'd be it.</p>
-    <button onclick="nextSection('thriller')">Enter the Mystery 🔍</button>
+    <p>You admire Taylor not just for the music.</p>
+    <p>But for how she feels everything — deeply, honestly, unapologetically.</p>
+    <p>Love that’s golden.</p>
+    <p>Stories written at 2 a.m.</p>
+    <p>Romance that believes in fate, timing, and choosing again.</p>
+    <p>That’s you.</p>
+    <p>Soft heart. Brave feelings. No pretending.</p>
+    <p><i>Some people don’t just listen to love songs — they live them.</i></p>
+    <button onclick="next('ironman')">Suit Up 🦸‍♀️</button>
   </div>
 </section>
 
-<section id="thriller" class="hidden">
-  <h2>Thriller & Mystery 🕯️</h2>
+<section id="ironman" class="hidden">
+  <h2>🦸 Iron Man — The Constant</h2>
   <div class="card">
-    <p>The biggest mystery I solved?</p>
-    <p>How someone so perfect found her way into my life.</p>
-    <button onclick="nextSection('final')">Final Scene 🎥</button>
+    <p>You love Iron Man not just for the suit.</p>
+    <p>But for the heart underneath.</p>
+    <p>The one who jokes, pretends he’s fine…</p>
+    <p>While carrying the weight of caring deeply.</p>
+    <p>Tony Stark once said:</p>
+    <p><i>“I am Iron Man.”</i></p>
+    <p>And somehow, Keertana…</p>
+    <p><b>You’re proof that strength can be soft.</b></p>
+    <button onclick="next('stranger')">Things Get Strange 👀</button>
+  </div>
+</section>
+
+<section id="stranger" class="hidden">
+  <h2>🧇 Stranger Things — Inner World</h2>
+  <div class="card">
+    <p>You smile easily.</p>
+    <p>But inside, you feel everything — deeply.</p>
+    <p>Thoughts you don’t always say out loud.</p>
+    <p>Worries you quietly carry.</p>
+    <p>Even when the world feels upside down…</p>
+    <p><b>I’d still choose you. Every time.</b></p>
+    <button onclick="next('horror')">Lights Off 🕯️</button>
+  </div>
+</section>
+
+<section id="horror" class="hidden">
+  <h2>🔪 Horror Binge — Safe Place</h2>
+  <div class="card">
+    <p>You love the fear — the thrill — the late‑night binges.</p>
+    <p>Jump scares. Racing heart.</p>
+    <p>You act brave.</p>
+    <p>But you move a little closer.</p>
+    <p>And in that moment, everything makes sense.</p>
+    <p><b>Even fear feels softer when you’re not alone.</b></p>
+    <button onclick="next('final')">End Credits ❤️</button>
   </div>
 </section>
 
 <section id="final" class="hidden">
-  <h2>Final Scene ❤️</h2>
+  <h2>❤️ End Credits</h2>
   <div class="card">
-    <p>No jump scares. No cliffhangers.</p>
-    <p>Just one question…</p>
+    <p>Chill on the outside.</p>
+    <p>Soft on the inside.</p>
+    <p>A heart that loves deeply.</p>
+    <p>Different genres. Same feeling.</p>
+    <p>Keertana…</p>
+    <p><b>You’re my favourite story.</b></p>
     <h3>Will you be my Valentine? 💌</h3>
-    <button onclick="alert('Best answer ever ❤️')">YES 🥰</button>
+    <button onclick="alert('I knew you’d say yes ❤️')">YES 🥰</button>
   </div>
 </section>
 
 <script>
-  function nextSection(id) {
-    document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
-  }
-
-  function createHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.innerText = '❤️';
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 6000);
-  }
-
-  setInterval(createHeart, 500);
+  function next(id) { document.querySelectorAll('section').forEach(s => s.classList.add('hidden')); document.getElementById(id).classList.remove('hidden'); }
+  function heart() { const h = document.createElement('div'); h.className = 'heart'; h.style.left = Math.random() * 100 + 'vw'; h.innerText = '❤️'; document.body.appendChild(h); setTimeout(() => h.remove(), 7000); }
+  setInterval(heart, 600);
 </script>
 
 </body>
